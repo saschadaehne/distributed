@@ -220,7 +220,7 @@ def start_worker(logdir, scheduler_addr, scheduler_port, worker_addr, nthreads, 
     cmd = ('{python} -m {remote_dask_worker} '
            '{scheduler_addr}:{scheduler_port} '
            '--nthreads {nthreads}'
-           + ('--nprocs {nprocs}' if nprocs != 1 else ''))
+           + (' --nprocs {nprocs}' if nprocs != 1 else ''))
 
     if not nohost:
         cmd += ' --host {worker_addr} '
